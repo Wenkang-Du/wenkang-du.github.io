@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Academic Website</title>
+    <title>Dr. [Your Name] - Statistical Physics & DL Theory</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 全局样式 */
+        /* 全局样式 - 保持不变 */
         :root {
             --primary-color: #1a365d; /* 学术深蓝 */
             --secondary-color: #2b6cb0; /* 亮蓝 */
@@ -28,7 +28,7 @@
             line-height: 1.6;
         }
 
-        /* 导航栏 */
+        /* 导航栏 - 保持不变 */
         header {
             background-color: var(--card-bg);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -73,33 +73,35 @@
             color: var(--secondary-color);
         }
 
-        /* 页面布局容器 */
+        /* 🚀 核心布局修改 🚀 */
         .main-container {
             max-width: 1100px;
             margin: 30px auto;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: 3fr 1fr; /* 左侧主要内容，右侧个人简介 */
+            /* 修改为：左侧 1 份宽度 (约 280px), 右侧 3 份宽度 */
+            grid-template-columns: 1fr 3fr; 
             gap: 30px;
+            align-items: flex-start; /* 确保侧边栏和主内容顶部对齐 */
         }
 
-        /* 左侧主要内容区 */
+        /* 右侧主要内容区 - 保持样式 */
         main {
             display: flex;
             flex-direction: column;
             gap: 40px;
         }
 
-        /* 右侧个人信息侧边栏 */
+        /* 左侧个人信息侧边栏 - 样式微调，保持吸附功能 */
         aside {
             background-color: var(--card-bg);
             padding: 30px 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             text-align: center;
-            height: fit-content;
-            position: sticky;
-            top: 90px;
+            position: sticky; /* 保持吸附 */
+            top: 90px; /* 导航栏高度 + 间距 */
+            width: 100%; /* 占满 Grid 的第一列 */
         }
 
         .profile-img {
@@ -141,7 +143,7 @@
             transform: translateY(-2px);
         }
 
-        /* 通用区块样式 */
+        /* 通用区块样式 - 保持不变 */
         section {
             background-color: var(--card-bg);
             padding: 30px;
@@ -160,11 +162,8 @@
             gap: 10px;
         }
 
-        /* 关于我 / 介绍 */
-        .bio-text p {
-            margin-bottom: 15px;
-        }
-        
+        /* 内容板块的具体样式 - 保持不变 (Bio, News, Interests, Pubs, CV, Contact) */
+        .bio-text p { margin-bottom: 15px; }
         .highlight-box {
             background-color: #ebf8ff;
             border-left: 4px solid var(--secondary-color);
@@ -173,19 +172,8 @@
             margin-top: 20px;
             font-weight: 500;
         }
-
-        /* 最新动态 News */
-        .news-list {
-            list-style: none;
-        }
-
-        .news-item {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-            align-items: flex-start;
-        }
-
+        .news-list { list-style: none; }
+        .news-item { display: flex; gap: 15px; margin-bottom: 15px; align-items: flex-start; }
         .news-date {
             background-color: #e2e8f0;
             color: var(--primary-color);
@@ -195,94 +183,26 @@
             border-radius: 4px;
             white-space: nowrap;
         }
-
-        /* 研究兴趣 */
-        .interests-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
+        .interests-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .interest-card {
             border: 1px solid #edf2f7;
             padding: 15px;
             border-radius: 6px;
             transition: transform 0.3s;
         }
-
-        .interest-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-
-        .interest-card h3 {
-            color: var(--secondary-color);
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-
-        /* 论文发表 */
-        .pub-list {
-            list-style: none;
-        }
-
-        .pub-item {
-            margin-bottom: 20px;
-            padding-left: 15px;
-            border-left: 3px solid #cbd5e0;
-        }
-
-        .pub-title {
-            font-weight: bold;
-            font-size: 1.05rem;
-            color: #1a202c;
-        }
-
-        .pub-authors {
-            font-size: 0.95rem;
-            color: #4a5568;
-        }
-
-        .pub-venue {
-            font-style: italic;
-            color: #718096;
-            font-size: 0.9rem;
-        }
-
-        .pub-links {
-            margin-top: 5px;
-        }
-
-        .pub-links a {
-            font-size: 0.85rem;
-            text-decoration: none;
-            color: var(--secondary-color);
-            margin-right: 15px;
-            font-weight: 500;
-        }
-
-        .pub-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* 个人简历 CV */
-        .cv-timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .timeline-item {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .timeline-left {
-            font-weight: bold;
-            color: var(--primary-color);
-            min-width: 120px;
-        }
-
+        .interest-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .interest-card h3 { color: var(--secondary-color); margin-bottom: 8px; font-size: 1.1rem; }
+        .pub-list { list-style: none; }
+        .pub-item { margin-bottom: 20px; padding-left: 15px; border-left: 3px solid #cbd5e0; }
+        .pub-title { font-weight: bold; font-size: 1.05rem; color: #1a202c; }
+        .pub-authors { font-size: 0.95rem; color: #4a5568; }
+        .pub-venue { font-style: italic; color: #718096; font-size: 0.9rem; }
+        .pub-links { margin-top: 5px; }
+        .pub-links a { font-size: 0.85rem; text-decoration: none; color: var(--secondary-color); margin-right: 15px; font-weight: 500; }
+        .pub-links a:hover { text-decoration: underline; }
+        .cv-timeline { display: flex; flex-direction: column; gap: 15px; }
+        .timeline-item { display: flex; justify-content: space-between; }
+        .timeline-left { font-weight: bold; color: var(--primary-color); min-width: 120px; }
         .btn-cv {
             display: inline-block;
             background-color: var(--primary-color);
@@ -294,12 +214,9 @@
             font-weight: 500;
             transition: background-color 0.3s;
         }
+        .btn-cv:hover { background-color: var(--secondary-color); }
 
-        .btn-cv:hover {
-            background-color: var(--secondary-color);
-        }
-
-        /* 页脚 */
+        /* 页脚 - 保持不变 */
         footer {
             text-align: center;
             padding: 30px 20px;
@@ -309,19 +226,19 @@
             font-size: 0.9rem;
         }
 
-        /* 手机端响应式适配 */
+        /* 🚀 手机端响应式适配修改 🚀 */
         @media (max-width: 768px) {
             .main-container {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* 手机端单列 */
             }
 
             aside {
-                position: static;
-                order: -1; /* 在手机上把个人信息侧边栏提到最上方 */
+                position: static; /* 手机端取消吸附 */
+                margin-bottom: 20px;
             }
 
             .interests-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* 手机端研究兴趣单列 */
             }
         }
     </style>
@@ -346,6 +263,25 @@
 
     <div class="main-container">
         
+        <aside>
+            <img src="https://via.placeholder.com/180" alt="Your Photo" class="profile-img">
+            <h1 class="aside-name">[Your Name]</h1>
+            <p class="aside-title">Ph.D. in Physics / ML Theory<br>Seeking Postdoc Positions</p>
+            
+            <div class="social-links">
+                <a href="mailto:your.email@example.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="#" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+                <a href="#" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" target="_blank" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+
+            <p style="font-size: 0.85rem; color: #718096; border-top: 1px solid #edf2f7; padding-top: 15px;">
+                Research Area:<br>
+                <strong>Statistical Physics of Deep Learning</strong>
+            </p>
+        </aside>
+
         <main>
             
             <section id="about">
@@ -468,25 +404,6 @@
             </section>
 
         </main>
-
-        <aside>
-            <img src="https://via.placeholder.com/180" alt="Your Photo" class="profile-img">
-            <h1 class="aside-name">[Your Name]</h1>
-            <p class="aside-title">Ph.D. in Physics / ML Theory<br>Seeking Postdoc Positions</p>
-            
-            <div class="social-links">
-                <a href="mailto:your.email@example.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
-                <a href="#" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-                <a href="#" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="#" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#" target="_blank" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
-            </div>
-
-            <p style="font-size: 0.85rem; color: #718096; border-top: 1px solid #edf2f7; padding-top: 15px;">
-                Research Area:<br>
-                <strong>Statistical Physics of Deep Learning</strong>
-            </p>
-        </aside>
 
     </div>
 
