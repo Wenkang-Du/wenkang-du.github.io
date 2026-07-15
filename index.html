@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. [Your Name] - Statistical Physics & DL Theory</title>
+    <title>Wenkang Du - Statistical Physics & DL Theory</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 全局样式 - 保持不变 */
         :root {
             --primary-color: #1a365d; /* 学术深蓝 */
             --secondary-color: #2b6cb0; /* 亮蓝 */
@@ -28,7 +27,6 @@
             line-height: 1.6;
         }
 
-        /* 导航栏 - 保持不变 */
         header {
             background-color: var(--card-bg);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -73,35 +71,32 @@
             color: var(--secondary-color);
         }
 
-        /* 🚀 核心布局修改 🚀 */
         .main-container {
             max-width: 1100px;
             margin: 30px auto;
             padding: 0 20px;
             display: grid;
-            /* 修改为：左侧 1 份宽度 (约 280px), 右侧 3 份宽度 */
             grid-template-columns: 1fr 3fr; 
             gap: 30px;
-            align-items: flex-start; /* 确保侧边栏和主内容顶部对齐 */
+            align-items: flex-start; 
         }
 
-        /* 右侧主要内容区 - 保持样式 */
         main {
             display: flex;
             flex-direction: column;
             gap: 40px;
         }
 
-        /* 左侧个人信息侧边栏 - 样式微调，保持吸附功能 */
+        /* 左侧个人信息侧边栏 */
         aside {
             background-color: var(--card-bg);
             padding: 30px 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             text-align: center;
-            position: sticky; /* 保持吸附 */
-            top: 90px; /* 导航栏高度 + 间距 */
-            width: 100%; /* 占满 Grid 的第一列 */
+            position: sticky; 
+            top: 90px; 
+            width: 100%; 
         }
 
         .profile-img {
@@ -143,7 +138,7 @@
             transform: translateY(-2px);
         }
 
-        /* 通用区块样式 - 保持不变 */
+        /* 通用区块样式 */
         section {
             background-color: var(--card-bg);
             padding: 30px;
@@ -162,7 +157,7 @@
             gap: 10px;
         }
 
-        /* 内容板块的具体样式 - 保持不变 (Bio, News, Interests, Pubs, CV, Contact) */
+        /* 内容板块的具体样式 */
         .bio-text p { margin-bottom: 15px; }
         .highlight-box {
             background-color: #ebf8ff;
@@ -216,7 +211,7 @@
         }
         .btn-cv:hover { background-color: var(--secondary-color); }
 
-        /* 页脚 - 保持不变 */
+        /* 页脚 */
         footer {
             text-align: center;
             padding: 30px 20px;
@@ -226,7 +221,7 @@
             font-size: 0.9rem;
         }
 
-        /* 🚀 手机端响应式适配修改 🚀 */
+        /* 手机端响应式 */
         @media (max-width: 768px) {
             .main-container {
                 grid-template-columns: 1fr; /* 手机端单列 */
@@ -265,11 +260,11 @@
         
         <aside>
             <img src="https://via.placeholder.com/180" alt="Your Photo" class="profile-img">
-            <h1 class="aside-name">[Your Name]</h1>
+            <h1 class="aside-name">[Wenkang Du]</h1>
             <p class="aside-title">Ph.D. in Physics / ML Theory<br>Seeking Postdoc Positions</p>
             
             <div class="social-links">
-                <a href="mailto:your.email@example.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="dwklan1905@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
                 <a href="#" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
                 <a href="#" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
                 <a href="#" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
@@ -398,8 +393,8 @@
                 <h2><i class="fa-solid fa-envelope"></i> Contact</h2>
                 <p>If you are interested in my research or have potential postdoc openings, please don't hesitate to get in touch!</p>
                 <div style="margin-top: 15px;">
-                    <p><strong><i class="fa-solid fa-envelope"></i> Email:</strong> <a href="mailto:your.email@example.com" style="color: var(--secondary-color);">your.email@example.com</a></p>
-                    <p><strong><i class="fa-solid fa-location-dot"></i> Office:</strong> Room XXX, [Building Name], [University Name]</p>
+                    <p><strong><i class="fa-solid fa-envelope"></i> Email:</strong> <a href="mailto:dwklan1905@gmail.com" style="color: var(--secondary-color);">dwklan1905@gmail.com</a></p>
+    
                 </div>
             </section>
 
@@ -408,7 +403,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 [Your Name]. Powered by GitHub Pages.</p>
+        <p>&copy; 2026 Wenkang Du. Powered by GitHub Pages.</p>
     </footer>
 
 </body>
